@@ -1,5 +1,3 @@
-import { FieldComponent, Schema } from '@simpli/meta-schema'
-
 const template = `
   <component
     v-if="isComponent"
@@ -14,6 +12,7 @@ const template = `
 `
 
 import { Component, Prop, Vue, Inject } from 'vue-property-decorator'
+import { FieldComponent, Schema } from '@simpli/meta-schema'
 
 @Component({ template })
 export class RenderSchema extends Vue {
