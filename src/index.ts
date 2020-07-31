@@ -6,7 +6,7 @@ import { RenderImage } from './RenderImage'
 
 export default class AwaitWrapper {
   static install() {
-    Vue.component(RenderSchema.name, RenderSchema)
+    Vue.component('RenderSchema', RenderSchema)
   }
 }
 
