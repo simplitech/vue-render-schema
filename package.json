@@ -1,6 +1,6 @@
 {
   "name": "@simpli/vue-render-schema",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue component to conditionally apply the behaviour described by Meta-Schema",
   "keywords": [],
   "main": "lib/index.js",
