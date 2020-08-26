@@ -5,8 +5,9 @@ const template = `
     v-model="value[fieldName]"
     v-bind="vBind"
     v-on="vOn"
+    @input="$emit('innerInput', $event)"
   >
-    <slot></slot>
+    <slot :builtSchema="vBind"></slot>
   </component>
   <div v-else-if="fieldContent !== undefined && fieldContent !== null" v-html="fieldContent"></div>
 `
