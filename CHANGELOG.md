@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.1.0](https://github.com/simplitech/vue-render-schema/compare/v1.0.1...v1.1.0) (2020-08-26)
+
+
+### Features
+
+* **RenderSchema:** Add input event emit, pass builtSchema to the slot as a prop ([6b029a4](https://github.com/simplitech/vue-render-schema/commit/6b029a4))
+
+
+
 ## 1.0.1 (2020-07-31)
 
 
