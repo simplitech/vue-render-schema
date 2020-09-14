@@ -6,6 +6,7 @@ const template = `
     v-bind="vBind"
     v-on="vOn"
     @input="$emit('innerInput', $event)"
+    ref="innerComponent"
   >
     <slot :builtSchema="vBind"></slot>
   </component>
@@ -75,5 +76,9 @@ export class RenderSchema extends Vue {
     const listeners = { ...this.$listeners }
     delete listeners.input
     return listeners
+  }
+
+  public get innerComponent() {
+    return this.$refs.innerComponent
   }
 }
