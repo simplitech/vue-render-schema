@@ -2,7 +2,7 @@ const template = `
   <component
     v-if="isComponent"
     :is="is"
-    v-model="value[fieldName]"
+    v-model="computedModel"
     v-bind="vBind"
     v-on="vOn"
     @input="$emit('innerInput', $event)"
@@ -29,6 +29,24 @@ export class RenderSchema extends Vue {
 
   @Inject({ from: 'validator', default: null })
   validator: any
+
+  get computedModel() {
+    const { converter } = this.vBind
+    if (converter && converter.from) {
+      return converter.from(this.value[this.field])
+    }
+
+    return this.value[this.field]
+  }
+
+  set computedModel(val: any) {
+    const { converter } = this.vBind
+    if (converter && converter.to) {
+      this.value[this.field] = converter.to(val)
+    } else {
+      this.value[this.field] = val
+    }
+  }
 
   get fieldContent() {
     const { value, schema, field, attrs, listeners } = this
