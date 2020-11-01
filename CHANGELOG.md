@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.3.0](https://github.com/simplitech/vue-render-schema/compare/v1.2.2...v1.3.0) (2020-11-01)
+
+
+### Features
+
+* **RenderSchema:** converter is a new property that allows code reuse instead of having repeated ge ([6651cc2](https://github.com/simplitech/vue-render-schema/commit/6651cc2))
+
+
+
 ## [1.2.2](https://github.com/simplitech/vue-render-schema/compare/v1.2.1...v1.2.2) (2020-09-14)
 
 
