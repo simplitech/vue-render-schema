@@ -33,18 +33,18 @@ export class RenderSchema extends Vue {
   get computedModel() {
     const { converter } = this.vBind
     if (converter && converter.from) {
-      return converter.from(this.value[this.field])
+      return converter.from(this.value[this.fieldName])
     }
 
-    return this.value[this.field]
+    return this.value[this.fieldName]
   }
 
   set computedModel(val: any) {
     const { converter } = this.vBind
     if (converter && converter.to) {
-      this.value[this.field] = converter.to(val)
+      this.value[this.fieldName] = converter.to(val, this.value[this.fieldName])
     } else {
-      this.value[this.field] = val
+      this.value[this.fieldName] = val
     }
   }
 
@@ -65,10 +65,12 @@ export class RenderSchema extends Vue {
     }
   }
 
-  get fieldName() {
+  get fieldName(): string {
     if (this.isComponent) {
       const fieldContent = this.fieldContent as FieldComponent
       return fieldContent.name || this.field
+    } else {
+      return ''
     }
   }
 
